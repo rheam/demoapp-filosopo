@@ -1,0 +1,43 @@
+<nb-card-body>
+    <form [formGroup]="profileForm" (ngSubmit)="add()">
+        <div class="form-group row">
+            <label for="inputEmail1" class="col-sm-3 col-form-label">Fullname</label>
+            <div class="col-sm-9">
+                <input [ngClass]="{ 'is-invalid': submitted && f.usr_fullname.errors }" id="fullname" name="fullname" required nbInput type="text" formControlName="usr_fullname" class="form-control" placeholder="Full Name">
+            </div>
+        </div>
+        <div *ngIf="submitted && f.usr_fullname.errors" class="invalid-feedback">
+            <div *ngIf="f.usr_fullname.errors.required">Full Name is required</div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword2" class="col-sm-3 col-form-label">Address</label>
+            <div class="col-sm-9">
+                <input [ngClass]="{ 'is-invalid': submitted && f.usr_address.errors }" required nbInput type="text" formControlName="usr_address"  class="form-control" placeholder="Address">
+            </div>
+        </div>
+        <div *ngIf="submitted && f.usr_address.errors" class="invalid-feedback">
+            <div *ngIf="f.usr_address.errors.required">Address is required</div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword2" class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+                <input [ngClass]="{ 'is-invalid': submitted && f.usr_email.errors }" required nbInput type="email" formControlName="usr_email" class="form-control" placeholder="Email">
+            </div>
+        </div>
+        <div *ngIf="submitted && f.usr_email.errors" class="invalid-feedback">
+            <div *ngIf="f.usr_email.errors.required">Email is required</div>
+        </div>
+
+        <div class="form-group row">        
+            <div class="offset-sm-3 col-sm-9">
+                <button status="primary" nbButton fullWidth>Submit</button>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+                <button type="reset" status="danger" nbButton fullWidth>Reset</button> 
+            </div>
+        </div>
+    </form>
+</nb-card-body>
