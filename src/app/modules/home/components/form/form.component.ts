@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl, Validators , FormBuilder} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { UserService } from '../../../../core/services/user.service';
 import { User } from '../../../../user';
 import { NbToastrService } from '@nebular/theme';
@@ -11,7 +11,7 @@ import { NbToastrService } from '@nebular/theme';
 
 })
 export class FormComponent implements OnInit {
-  @Output() open: EventEmitter<any> = new EventEmitter();
+
   private index: number = 0;
   profileForm: FormGroup;
 
@@ -44,7 +44,7 @@ export class FormComponent implements OnInit {
       .subscribe(user => {
         this.showToast('top-right', 'success');
         this.loading = false;
-        this.open.emit(user);
+
     }); 
   }
 
