@@ -1,3 +1,4 @@
+
 <nb-card>
   <nb-card-header>
     <div class="title" tabindex="-1">
@@ -12,7 +13,7 @@
   <nb-list>
       <nb-list-item class="contact" *ngFor="let user of users">
         <a style="text-decoration: none;" routerLink="/users/{{user._id}}">
-            <nb-user  [name]="user.usr_fullname" [title]="user.usr_email" size="large"></nb-user>
+            <nb-user [name]="user.usr_fullname" [title]="user.usr_email" size="large"></nb-user>
         </a>
         <nb-actions size="small">
           <nb-action nbButton status="danger" (click)="delete(user)" nbTooltip="Delete User" nbTooltipPlacement="top" nbButton icon="trash-outline"></nb-action>
@@ -20,3 +21,4 @@
       </nb-list-item>
   </nb-list>
 </nb-card>
+

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UsersComponent } from './modules/home/pages/users/users.component';
-import { DashboardComponent }   from './modules/home/components/dashboard/dashboard.component';
+/* import { DashboardComponent }   from './modules/home/components/dashboard/dashboard.component'; */
 import { UserDetailComponent }  from './modules/home/components/user-detail/user-detail.component';
 import { NotFoundComponent }  from './modules/home/pages/404/not-found/not-found.component';
 

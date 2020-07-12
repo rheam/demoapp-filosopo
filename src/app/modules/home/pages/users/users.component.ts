@@ -12,6 +12,7 @@ import { NbToastrService } from '@nebular/theme';
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'], 
+  /* template:`<app-form (open)='onOpen($event)'></app-form>` */
 })
 
 export class UsersComponent implements OnInit {
@@ -20,9 +21,9 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private UserService: UserService,
-     private formBuilder: FormBuilder, 
-     private windowService: NbWindowService,  
-     private toastrService: NbToastrService
+    private formBuilder: FormBuilder, 
+    private windowService: NbWindowService,  
+    private toastrService: NbToastrService
   ) {}
 
   ngOnInit(): void {
@@ -52,6 +53,10 @@ export class UsersComponent implements OnInit {
   }
   openWindow() {
     this.windowService.open(FormComponent, { title: `Add User` });
+  }
+
+  onOpen(event:any){
+    console.log(event)
   }
 
 }

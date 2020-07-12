@@ -38,6 +38,7 @@ import {
   NbWindowModule,
   NbUserModule 
 } from '@nebular/theme';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import {
     SubHeaderComponent,
     MyLoaderComponent,
     FormComponent,
-    NotFoundComponent,   
+    NotFoundComponent,
   ],
 
   imports: [
@@ -78,7 +79,8 @@ import {
     NbToastrModule.forRoot(),
     NbTooltipModule,
     NbWindowModule.forRoot(),
-    NbUserModule
+    NbUserModule,
+    RouterModule.forRoot([]),
   ],
 
   providers: [

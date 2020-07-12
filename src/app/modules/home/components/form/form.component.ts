@@ -7,10 +7,11 @@ import { NbToastrService } from '@nebular/theme';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss'],
+
 })
 export class FormComponent implements OnInit {
-
+  @Output() open: EventEmitter<any> = new EventEmitter();
   private index: number = 0;
   profileForm: FormGroup;
 
@@ -43,6 +44,7 @@ export class FormComponent implements OnInit {
       .subscribe(user => {
         this.showToast('top-right', 'success');
         this.loading = false;
+        this.open.emit(user);
     }); 
   }
 
