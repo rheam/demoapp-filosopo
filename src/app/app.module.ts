@@ -36,7 +36,8 @@ import {
   NbToastrModule,
   NbTooltipModule, 
   NbWindowModule,
-  NbUserModule 
+  NbUserModule, 
+  NbToastrService
 } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
 
@@ -52,6 +53,7 @@ import { RouterModule } from '@angular/router';
     MyLoaderComponent,
     FormComponent,
     NotFoundComponent,
+    NbToastrService
   ],
 
   imports: [

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormComponent } from './form.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NbToastrService } from '@nebular/theme';
+
 
 describe('FormComponent', () => {
   let component: FormComponent;
@@ -13,8 +13,6 @@ describe('FormComponent', () => {
       declarations: [ FormComponent ],
       imports:[
         HttpClientModule,
-        NbToastrService
-       
       ]
     })
     .compileComponents();

@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../../../user';
 import { USERS } from '../../../../core/mocks/mock-users';
 import { UserService } from '../../../../core/services/user.service';
-import { MessageService } from '../../../../core/services/message.service';
-import { FormGroup, FormControl, Validators , FormBuilder} from '@angular/forms';
 import { NbWindowService } from '@nebular/theme';
 import { FormComponent } from '../../components/form/form.component';
 import { NbToastrService } from '@nebular/theme';
@@ -21,7 +19,6 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private UserService: UserService,
-    private formBuilder: FormBuilder, 
     private windowService: NbWindowService,  
     private toastrService: NbToastrService
   ) {}
