@@ -15,7 +15,7 @@ import { NbToastrService } from '@nebular/theme';
 export class UserDetailComponent implements OnInit {
   loading = true;
   user: User;
-  private index: number = 0;
+
   constructor(
     private route: ActivatedRoute,
     private userService: UserService,
@@ -50,7 +50,6 @@ export class UserDetailComponent implements OnInit {
   }
 
   showToast(position, status) {
-    this.index += 1;
     this.toastrService.show(
       status || 'Success',
       `Success Update!`,

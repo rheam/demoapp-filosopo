@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NbSidebarService } from '@nebular/theme';
 
 @Component({
   selector: 'app-sub-header',
@@ -8,7 +7,7 @@ import { NbSidebarService } from '@nebular/theme';
 })
 export class SubHeaderComponent implements OnInit {
 
-  constructor(private sidebarService: NbSidebarService) { }
+  constructor() { }
 
   toggle() {
     /* this.sidebarService.toggle(true); */
