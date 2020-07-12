@@ -1,0 +1,53 @@
+@import '../../../../@theme/styles/themes';
+  
+  @include nb-install-component() {
+
+    nb-card {
+      min-width: 20rem;
+      max-width: 30rem;
+      margin: 0 auto 2rem;
+    }
+    nb-tabset {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    nb-tab {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0;
+      color: #232440;
+    }
+  
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: nb-theme(color-fg);
+      padding: 1rem;
+  
+      &:not(:last-child) {
+        border-bottom: 1px solid nb-theme(separator);
+      }
+    }
+  
+    .i-contact {
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  
+    .time {
+      font-size: 0.875rem;
+      font-weight: nb-theme(font-weight-light);
+      text-transform: uppercase;
+    }
+
+    nb-list-item {
+      color: #131b3a;;
+    }
+  
+  }
+  
+  
+  
