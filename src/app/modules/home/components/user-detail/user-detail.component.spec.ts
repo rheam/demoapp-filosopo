@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserDetailComponent } from './user-detail.component';
 import { RouterTestingModule } from "@angular/router/testing";
 import { HttpClientModule } from '@angular/common/http';
+import { NbToastrService } from '@nebular/theme';
 
 describe('UserDetailComponent', () => {
   let component: UserDetailComponent;
@@ -15,6 +16,7 @@ describe('UserDetailComponent', () => {
         RouterTestingModule,
         HttpClientModule
       ],
+      providers:[NbToastrService]
     })
     .compileComponents();
   }));

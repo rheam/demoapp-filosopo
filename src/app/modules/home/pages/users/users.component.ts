@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../../../user';
 import { USERS } from '../../../../core/mocks/mock-users';
 import { UserService } from '../../../../core/services/user.service';
-import { NbWindowService } from '@nebular/theme';
+import { NbWindowService, NbToastrService, NbDialogService} from '@nebular/theme';
 import { FormComponent } from '../../components/form/form.component';
-import { NbToastrService } from '@nebular/theme';
+
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss'], 
-  /* template:`<app-form (open)='onOpen($event)'></app-form>` */
+  styleUrls: ['./users.component.scss']
 })
 
 export class UsersComponent implements OnInit {
@@ -20,7 +19,8 @@ export class UsersComponent implements OnInit {
   constructor(
     private UserService: UserService,
     private windowService: NbWindowService,  
-    private toastrService: NbToastrService
+    private toastrService: NbToastrService,
+    private dialogService: NbDialogService
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +41,7 @@ export class UsersComponent implements OnInit {
       }
     );
   }
+
   showToast(position, status, message) {
     this.toastrService.show( 
       status || 'Success',
@@ -49,11 +50,8 @@ export class UsersComponent implements OnInit {
     );
   }
   openWindow() {
-    this.windowService.open(FormComponent, { title: `Add User` });
-  }
-
-  onOpen(event:any){
-    console.log(event)
+    this.dialogService.open(FormComponent)
+      .onClose.subscribe(name =>  name && this.users.push(name));
   }
 
 }

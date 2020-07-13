@@ -6,8 +6,7 @@ import {
     HttpResponse,   
     HttpErrorResponse 
 } from '@angular/common/http';  
-import { Observable, throwError } from 'rxjs';
-import { retry, catchError, delay } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { LoaderService } from '../services/loader.service'; 
 import { Injectable } from '@angular/core'; 
 import {Router} from "@angular/router";

@@ -1,26 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { UserService } from '../../../../core/services/user.service';
 import { User } from '../../../../user';
-import { NbToastrService } from '@nebular/theme';
+import { NbToastrService, NbDialogRef } from '@nebular/theme';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
-
+  styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-
-  private index: number = 0;
+  public event: EventEmitter<any> = new EventEmitter();
   profileForm: FormGroup;
-
+  
   loading = false;
   submitted = false;
+
   constructor(
     private UserService: UserService, 
     private toastrService: NbToastrService, 
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    protected dialogRef: NbDialogRef<any>
   ) { }
 
   ngOnInit(): void {
@@ -37,23 +37,26 @@ export class FormComponent implements OnInit {
     this.submitted =true;
     this.loading = true;
     if (this.profileForm.invalid) { 
-     return;
+      return;
     }
     
     this.UserService.addUser(this.profileForm.value as User)
       .subscribe(user => {
         this.showToast('top-right', 'success');
         this.loading = false;
-
+        this.dialogRef.close(user);
     }); 
   }
 
   showToast(position, status) {
-    this.index += 1;
     this.toastrService.show(
       status || 'Success',
       `Success Post!`,
       { position, status });
+  }
+
+  triggerEvent(item: string) {
+    this.event.emit({ data: item , res:200 });
   }
 
 }
