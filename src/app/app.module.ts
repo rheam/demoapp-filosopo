@@ -36,10 +36,11 @@ import {
   NbToastrModule,
   NbTooltipModule, 
   NbWindowModule,
-  NbUserModule, 
-  NbToastrService
+  NbUserModule,
+  NbDialogModule, 
 } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
+import { ListComponent } from './modules/home/components/list/list.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { RouterModule } from '@angular/router';
     MyLoaderComponent,
     FormComponent,
     NotFoundComponent,
-    NbToastrService
+    ListComponent
   ],
 
   imports: [
@@ -83,6 +84,7 @@ import { RouterModule } from '@angular/router';
     NbWindowModule.forRoot(),
     NbUserModule,
     RouterModule.forRoot([]),
+    NbDialogModule.forRoot()
   ],
 
   providers: [

@@ -34,7 +34,7 @@ export class UserService {
   }
 
   /** GET user by id. Will 404 if id not found */
-  getUser(id): Observable<User> {
+  getUser(id:string): Observable<User> {
     const url = `${this.UsersUrl}/${id}`;
     return this.http.get<User>(url) 
   }
