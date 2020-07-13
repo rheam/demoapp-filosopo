@@ -16,7 +16,6 @@ import { LoaderService } from './core/services/loader.service';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { TabComponent } from './modules/home/components/tab/tab.component';
-import { SubHeaderComponent } from './modules/home/components/sub-header/sub-header.component';
 import { MyLoaderComponent } from './modules/home/components/my-loader/my-loader.component';
 import { FormComponent } from './modules/home/components/form/form.component';
 import { NotFoundComponent } from './modules/home/pages/404/not-found/not-found.component';
@@ -40,7 +39,7 @@ import {
   NbDialogModule, 
 } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
-import { ListComponent } from './modules/home/components/list/list.component';
+
 
 @NgModule({
   declarations: [
@@ -50,11 +49,11 @@ import { ListComponent } from './modules/home/components/list/list.component';
     MessagesComponent,
     DashboardComponent,
     TabComponent,
-    SubHeaderComponent,
+
     MyLoaderComponent,
     FormComponent,
     NotFoundComponent,
-    ListComponent
+ 
   ],
 
   imports: [
